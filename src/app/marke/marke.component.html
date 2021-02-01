@@ -1,0 +1,19 @@
+<h3 style="background-color: red;padding:20px;color:silver">Marke</h3>
+<div>
+<table class="table table-dark table-striped">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">Naziv</th>
+      <th><button type="button"  class="btn btn-success"><a routerLink='/addMarka'><i class="fa fa-plus" aria-hidden="true"></i></a></button></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let marka of marke">
+      <th scope="row"></th>
+      <td>{{marka.naziv}}</td>
+      <td><button (click)="obrisiMarku(marka.markaId)" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button></td>
+    </tr>
+  </tbody>
+</table>
+</div>

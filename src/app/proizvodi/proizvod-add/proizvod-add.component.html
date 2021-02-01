@@ -1,0 +1,25 @@
+<form [formGroup]="form" (ngSubmit)="submitForm()" novalidate> 
+    <div class="row mb-3">
+      <label for="sifra" class="col-sm-2 col-form-label">Sifra</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="sifra"   formControlName="sifra">
+      </div>
+      <label for="kolicina" class="col-sm-2 col-form-label">Kolicina</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="kolicina" formControlName="kolicina">
+      </div>
+      <div class="col-sm-10">
+        <select formControlName="vrstaProizvodaId">
+          <option [ngValue]="null" disabled>Odaberi vrstu</option>
+          <option *ngFor="let vrsta of vrste" [ngValue]="vrsta.vrstaProizvodaId">{{vrsta.naziv}}</option>
+        </select>
+      </div>
+      <div class="col-sm-10">
+        <select formControlName="modelId">
+          <option [ngValue]="null" disabled>Odaberi model</option>
+          <option *ngFor="let model of modeli" [ngValue]="model.modelId">{{model.naziv}}</option>
+        </select>
+      </div>
+    </div>
+    <button class="button" type="submit">Sacuvaj</button>
+  </form>

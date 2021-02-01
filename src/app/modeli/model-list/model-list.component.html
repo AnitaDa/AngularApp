@@ -1,0 +1,21 @@
+<h3 style="background-color: red;padding:20px;color:silver">Modeli</h3>
+<div>
+<table class="table table-dark table-striped">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">Model</th>
+      <th scope="col">Marka</th>
+      <th><button type="button"  class="btn btn-success"><a routerLink='/addModel'><i class="fa fa-plus" aria-hidden="true"></i></a></button></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let model of modeli">
+      <th scope="row"></th>
+      <td>{{model.naziv}}</td>
+      <td>{{model.nazivMarke}}</td>
+      <td><button (click)="obrisiModel(model.modelId)" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button></td>
+    </tr>
+  </tbody>
+</table>
+</div>

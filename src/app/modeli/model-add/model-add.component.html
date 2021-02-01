@@ -1,0 +1,16 @@
+<form [formGroup]="form" (ngSubmit)="submitForm()" novalidate> 
+    <div class="row mb-3">
+      <label for="naziv" class="col-sm-2 col-form-label">Naziv</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="naziv" formControlName="naziv">
+      </div>
+      <label for="naziv" class="col-sm-2 col-form-label">Odaberite marku:</label>
+      <div class="col-sm-10">
+        <select formControlName="markaId">
+          <option [ngValue]="null" disabled>Select marku</option>
+          <option *ngFor="let marka of marke" [ngValue]="marka.markaId">{{marka.naziv}}</option>
+        </select>
+      </div>
+    </div>
+    <button class="button" type="submit">Sacuvaj</button>
+  </form>

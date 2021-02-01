@@ -1,0 +1,9 @@
+<form [formGroup]="form" (ngSubmit)="submitForm()" novalidate> 
+  <div class="row mb-3">
+    <label for="naziv" class="col-sm-2 col-form-label">Naziv</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="naziv"  placeholder="Mercedes-benz" formControlName="naziv">
+    </div>
+  </div>
+  <button class="button" type="submit">Sacuvaj</button>
+</form>
