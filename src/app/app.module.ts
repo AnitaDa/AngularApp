@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 
 import { MarkaComponent } from './marke/marka/marka.component';
 import { HttpClientModule } from '@angular/common/http';
-import { MarkaService } from './marke/marka.service';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MarkaAddComponent } from './marke/marka-add/marka-add.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -21,6 +20,7 @@ import { ProizvodAddComponent } from './proizvodi/proizvod-add/proizvod-add.comp
 import { VrsteProizvodaComponent } from './vrste-proizvoda/vrste-proizvoda.component';
 import { VrstaProizvodaListComponent } from './vrste-proizvoda/vrsta-proizvoda-list/vrsta-proizvoda-list.component';
 import { VrstaProizvodaAddComponent } from './vrste-proizvoda/vrsta-proizvoda-add/vrsta-proizvoda-add.component';
+import { SharedService } from './shared.service';
 
 @NgModule({
   declarations: [
@@ -46,7 +46,7 @@ import { VrstaProizvodaAddComponent } from './vrste-proizvoda/vrsta-proizvoda-ad
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [MarkaService],
+  providers: [SharedService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

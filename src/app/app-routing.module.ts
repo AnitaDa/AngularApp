@@ -7,6 +7,7 @@ import { ModelListComponent } from './modeli/model-list/model-list.component';
 import { ModelComponent } from './modeli/model/model.component';
 import { ProizvodAddComponent } from './proizvodi/proizvod-add/proizvod-add.component';
 import { ProizvodiListComponent } from './proizvodi/proizvodi-list/proizvodi-list.component';
+import { VrstaProizvodaAddComponent } from './vrste-proizvoda/vrsta-proizvoda-add/vrsta-proizvoda-add.component';
 import { VrstaProizvodaListComponent } from './vrste-proizvoda/vrsta-proizvoda-list/vrsta-proizvoda-list.component';
 
 const routes: Routes = [
@@ -17,9 +18,10 @@ const routes: Routes = [
   { path: "addModel", component: ModelAddComponent },
   { path: "listaVrsteProizvoda", component: VrstaProizvodaListComponent },
   { path: "listaProizvoda", component: ProizvodiListComponent },
-  { path: "addProizvod", component: ProizvodAddComponent }
-
-
+  { path: "addProizvod", component: ProizvodAddComponent },
+  { path: "editProizvod/:Id", component: ProizvodAddComponent },
+  { path: "addVrstaProizvoda", component: VrstaProizvodaAddComponent }
+  
 ];
 
 @NgModule({

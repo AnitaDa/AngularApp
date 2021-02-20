@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MarkaService } from 'src/app/marke/marka.service';
+import { SharedService } from 'src/app/shared.service';
 import { VrstaProizvoda } from 'src/app/vrsta-proizvoda';
 
 @Component({
@@ -9,7 +9,7 @@ import { VrstaProizvoda } from 'src/app/vrsta-proizvoda';
 })
 export class VrstaProizvodaListComponent implements OnInit {
   vrsteProizvoda:VrstaProizvoda[];
-  constructor(private service:MarkaService) { }
+  constructor(private service:SharedService) { }
 
   ngOnInit(): void {
    this.service.get("VrstaProizvoda").subscribe((data:VrstaProizvoda[])=>{

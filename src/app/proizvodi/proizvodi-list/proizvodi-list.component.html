@@ -19,8 +19,14 @@
       <td>{{proizvod.kolicina}}</td>
       <td>{{proizvod.naziv}}</td>
       <td>{{proizvod.vrsta}}</td>
+      <td>
+      <button class="btn btn-warning" [routerLink]="['/editProizvod',proizvod.proizvodId]">Izmeni</button>
+      
+    </td>
       <td><button class="btn btn-danger" (click)="obrisiProizvod(proizvod.proizvodId)"><i class="fa fa-trash-o" aria-hidden="true"></i></button></td>
+      
     </tr>
   </tbody>
 </table>
 </div>
+

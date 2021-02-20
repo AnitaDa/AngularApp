@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MarkaService } from 'src/app/marke/marka.service';
 import { Proizvod } from 'src/app/proizvod';
+import { SharedService } from 'src/app/shared.service';
 
 @Component({
   selector: 'app-proizvodi-list',
@@ -9,13 +9,14 @@ import { Proizvod } from 'src/app/proizvod';
 })
 export class ProizvodiListComponent implements OnInit {
    proizvodi:Proizvod[];
-  constructor(private service:MarkaService) { }
+  constructor(private service:SharedService) { }
 
   ngOnInit(): void {
   this.service.get("Proizvod").subscribe((data:Proizvod[])=>{
   this.proizvodi=data;
   });
   }
+ 
   obrisiProizvod(Id:number){
     this.service.delete(Id,"Proizvod").subscribe(d=>{
       this.proizvodi=this.proizvodi.filter(f=>f.proizvodId!==Id);

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-import { MarkaService } from 'src/app/marke/marka.service';
+import { SharedService } from 'src/app/shared.service';
 import { Model } from '../model';
 
 
@@ -11,7 +10,7 @@ import { Model } from '../model';
 })
 export class ModelListComponent implements OnInit {
   modeli:Model[];
-  constructor(private service:MarkaService) { }
+  constructor(private service:SharedService) { }
 
   ngOnInit(): void {
    this.service.get("Model")

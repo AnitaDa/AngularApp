@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { SharedService } from 'src/app/shared.service';
 import { Marka } from '../marka';
-import { MarkaService } from '../marka.service';
+
 
 @Component({
   selector: 'app-marka',
@@ -9,7 +10,7 @@ import { MarkaService } from '../marka.service';
 })
 export class MarkaComponent implements OnInit {
   marke:Marka[];
-  constructor(private service:MarkaService) { }
+  constructor(private service:SharedService) { }
   
   ngOnInit(): void {
     this.service.get("Marka")

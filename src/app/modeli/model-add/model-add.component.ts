@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormsModule,FormGroup, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Marka } from 'src/app/marke/marka';
-import { MarkaService } from 'src/app/marke/marka.service';
+import { SharedService } from 'src/app/shared.service';
 
 @Component({
   selector: 'app-model-add',
@@ -12,7 +12,7 @@ import { MarkaService } from 'src/app/marke/marka.service';
 export class ModelAddComponent implements OnInit {
   marke:Marka[];
   form:FormGroup;
-  constructor(private formBuilder: FormBuilder,private service:MarkaService,private router: Router) {
+  constructor(private formBuilder: FormBuilder,private service:SharedService,private router: Router) {
     this.form = this.formBuilder.group({
       naziv: [''],
       markaId:0
@@ -25,9 +25,8 @@ export class ModelAddComponent implements OnInit {
   })
   }
   submitForm(){
-    this.service.add(this.form.value,"Model").subscribe(res => {
+    this.service.add(this.form.value,"Model");
       console.log('Model created!')
       this.router.navigate(['listaModela'])
-    })
   }
 }
